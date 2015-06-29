@@ -1,0 +1,59 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Pull Refresh Example</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #thelist {
+            margin: 0 15px;
+            /*width: max;*/
+        }
+        #thelist ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #thelist ul li {
+            margin: 0;
+            padding: 0;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: solid 1px #000000;
+        }
+        </style>
+    </head>
+    <body>
+
+        <div id="thelist">
+            <ul>   
+                <li>Sample item</li>
+                <li>Sample item</li>
+                <li>Sample item</li>
+                <li>Sample item</li>
+                <li>Sample item</li>
+            </ul>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/pullrefresh.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#thelist').pullrefresh({
+                    fetch_data: function() {
+                        var r = $.Deferred();
+                        r.resolve('<ul><li>Refreshed Sample item</li><li>Refreshed Sample item</li><li>Refreshed Sample item</li><li>Refreshed Sample item</li><li>Refreshed Sample item</li></ul>');
+                        return r;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
