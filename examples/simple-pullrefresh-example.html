@@ -12,8 +12,10 @@
             font-family: Arial, sans-serif;
         }
         #thelist {
+            /*position: relative;*/
+            /*z-index: 2;*/
             margin: 0 15px;
-            /*width: max;*/
+            background-color: #FFFFFF;
         }
         #thelist ul {
             list-style-type: none;
@@ -28,10 +30,45 @@
             line-height: 40px;
             border-bottom: solid 1px #000000;
         }
+        #pullrefresh-spinner {
+            -webkit-animation: spin 1s linear;
+            -moz-animation: spin 1s linear;
+            -o-animation: spin 1s linear;
+            animation: spin 1s linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes spin
+        {
+            0% {
+              -ms-transform: rotate(360deg);
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+            100% {
+              -ms-transform: rotate(0deg);
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+        }
+
+        @-webkit-keyframes spin
+        {
+            0% {
+              -ms-transform: rotate(360deg);
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+            100% {
+            -ms-transform: rotate(0deg);
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+            }
+        }
         </style>
     </head>
     <body>
-
         <div id="thelist">
             <ul>   
                 <li>Sample item</li>
@@ -41,8 +78,17 @@
                 <li>Sample item</li>
             </ul>
         </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia lorem sit amet leo volutpat porta id quis erat. Nulla malesuada egestas scelerisque. Sed vitae sodales purus. Integer pellentesque augue eu urna dictum, eu lacinia erat imperdiet. Aliquam mollis erat at auctor dictum. In eget viverra risus. Vivamus viverra ipsum at enim aliquet, non porta nulla consequat. Nulla dignissim dolor non maximus molestie. Mauris tincidunt nibh at rhoncus tincidunt. Vestibulum non faucibus risus. Donec suscipit tristique urna viverra consectetur. Cras varius augue at leo dictum aliquet. Sed cursus ex eu nisi eleifend, id bibendum libero sollicitudin. Phasellus consequat nunc arcu, eu aliquet eros fermentum et. Maecenas fermentum cursus magna, varius aliquet odio aliquam vitae.</p>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <p>Quisque dignissim est ac risus ullamcorper finibus. Praesent ut erat viverra, venenatis est ac, mollis eros. Sed vel augue eu tellus dignissim auctor et ac orci. Aenean non dui urna. Phasellus accumsan purus sit amet ex dapibus laoreet. Sed vulputate tortor sit amet viverra blandit. Donec eu interdum dolor, at suscipit elit.</p>
+
+        <p>Ut luctus ante a arcu vehicula, sed fringilla odio cursus. Donec ullamcorper felis eu ante elementum condimentum. Suspendisse pretium lacinia mi vel maximus. Pellentesque condimentum blandit nunc, nec feugiat orci suscipit pharetra. Nulla vitae turpis quis diam tristique hendrerit. Sed mauris orci, dictum nec metus feugiat, ornare pellentesque ipsum. Donec iaculis arcu leo, a dapibus nulla cursus eu. Curabitur ut risus sit amet orci faucibus dictum. Fusce id massa ut enim bibendum rhoncus. Vestibulum feugiat dolor eu gravida eleifend. Etiam laoreet, libero eu dictum porttitor, ex ligula rhoncus odio, id iaculis justo ex a libero. Morbi et ultricies purus. In ultricies quis libero eu convallis. Curabitur vel sem magna. Aliquam sit amet lectus sapien.</p>
+
+        <p>Aliquam pretium lobortis libero, quis sollicitudin justo dignissim ac. In hac habitasse platea dictumst. Mauris commodo augue a eros pharetra, sit amet euismod mi posuere. Cras a scelerisque leo, pharetra convallis lacus. Sed sodales sollicitudin nisi vel tristique. Maecenas bibendum et justo sit amet commodo. Quisque facilisis, arcu eget tincidunt elementum, erat massa porta velit, eu consequat nulla nibh quis ligula. Vivamus bibendum nisi eget quam mollis efficitur. Quisque convallis mi a purus volutpat, quis viverra libero mattis.</p>
+
+        <p>Nunc lacinia vel libero eget cursus. Quisque augue mauris, consequat eget sem et, feugiat faucibus erat. Etiam venenatis dolor sit amet ligula tincidunt ultrices. Nullam faucibus euismod lorem eget dapibus. Nunc dictum massa est, eu consectetur velit convallis at. Ut arcu urna, tristique vulputate maximus a, sollicitudin quis turpis. Curabitur gravida eros bibendum justo ullamcorper fermentum. Nulla accumsan lorem dignissim gravida faucibus.</p>
+
+        <script src="js/jquery.js"></script>
         <script src="js/pullrefresh.jquery.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
