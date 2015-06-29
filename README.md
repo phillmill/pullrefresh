@@ -1,6 +1,6 @@
-# Pull to refresh
+# jQuery pull to refresh
 
-A very simple, lightweight jQuery plugin to "pull to refresh".
+A very simple, lightweight jQuery plugin to "pull to refresh". Can be very useful in phonegap or cordova applications.
 
 <h2>Usage</h2>
 
