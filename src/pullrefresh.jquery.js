@@ -5,6 +5,7 @@ $.fn.pullrefresh = function( options ) {
         fetch_data : false,
         pull_amount: 60,
         animation_speed: 300,
+        spinner_container: 'body',
         spinner_image: 'img/loading-graphic.png',
         spinner_width: 32,
         spinner_height: 32
@@ -25,7 +26,7 @@ $.fn.pullrefresh = function( options ) {
 				'height': settings.spinner_height,
 				'left': '50%',
 				'margin-left': Math.floor((settings.spinner_width / 2) * -1),
-				'top': (($list.offset().top - (Math.floor(settings.pull_amount / 2) - Math.floor(settings.spinner_height / 2))) - parseInt($('body').css("marginTop"))) + 'px',
+				'top': (($list.offset().top - (Math.floor(settings.pull_amount / 2) - Math.floor(settings.spinner_height / 2))) - parseInt($(settings.spinner_container).css("marginTop"))) + 'px',
 				'opacity': 0
 			});
 			$spinner.prependTo('body');
