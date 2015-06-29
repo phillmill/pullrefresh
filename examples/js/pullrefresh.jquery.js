@@ -5,36 +5,30 @@ $.fn.pullrefresh = function( options ) {
         fetch_data : false,
         pull_amount: 60,
         animation_speed: 300,
-        loading_image: 'img/loading-graphic.png'
+        spinner_image: 'img/loading-graphic.png',
+        spinner_width: 32,
+        spinner_height: 32
     }, options);
 
 	return this.each(function() {
 		var originalY;
 		var $spinner;
-		var spinner_width;
-		var spinner_height;
 		var $list = $(this);
 
 		// Set up the spinner
 		if(!$('#pullrefresh-spinner').length) {
-			var img = new Image();
-			img.src = settings.loading_image;
-			img.onload = function() {
-				spinner_width = img.height;
-				spinner_height = img.width;
-				$spinner = $('<div id="pullrefresh-spinner"><img src="'+settings.loading_image+'" alt="Loading spinner graphic" /></div>');
-				$spinner.css({
-					'position': 'absolute',
-					'z-index': '-1',
-					'width': spinner_width,
-					'height': spinner_height,
-					'left': '50%',
-					'margin-left': Math.floor((spinner_width / 2) * -1),
-					'top': ($list.offset().top + (Math.floor(settings.pull_amount / 2) - Math.floor(spinner_height / 2))) + 'px',
-					'opacity': 0
-				});
-				$spinner.prependTo('body');
-			}
+			$spinner = $('<div id="pullrefresh-spinner"><img src="'+settings.spinner_image+'" width="'+settings.spinner_width+'" height="'+settings.spinner_height+'" alt="Loading spinner graphic" /></div>');
+			$spinner.css({
+				'position': 'absolute',
+				'z-index': '-1',
+				'width': settings.spinner_width,
+				'height': settings.spinner_height,
+				'left': '50%',
+				'margin-left': Math.floor((settings.spinner_width / 2) * -1),
+				'top': ($list.offset().top + (Math.floor(settings.pull_amount / 2) - Math.floor(settings.spinner_height / 2))) + 'px',
+				'opacity': 0
+			});
+			$spinner.prependTo('body');
 		} else {
 			$spinner = $('#pullrefresh-spinner');
 		}
