@@ -22,7 +22,7 @@ Then create a list of data with pull to refresh functionality:
 </div>
   ```
   
-Finally, apply pull to refresh functionality with javascript snippet below. NOTE: you must implement jQuery deffered that you see in the example below or the plugin will not work. So if you're using ajax to retrieve your data you need run r.resolve() within the success callback.
+Finally, apply pull to refresh functionality with javascript snippet below. NOTE: you must implement jQuery deffered that you see in the example below or the data refresh will not work. So if you're using ajax to retrieve your data you need run r.resolve() within the success callback.
   
 ```js
 $(document).ready(function() {
