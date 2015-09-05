@@ -1,14 +1,14 @@
 $.fn.pullrefresh = function( options ) {
 	
 	// Establish our default settings
-    var settings = $.extend({
-        fetch_data : false,
-        pull_amount: 60,
-        animation_speed: 300,
-        spinner_image: 'img/loading-graphic.png',
-        spinner_width: 32,
-        spinner_height: 32
-    }, options);
+	var settings = $.extend({
+		fetch_data : false,
+		pull_amount: 60,
+		animation_speed: 300,
+		spinner_image: 'img/loading-graphic.png',
+		spinner_width: 32,
+		spinner_height: 32
+	}, options);
 
 	return this.each(function() {
 		var originalY;
@@ -82,7 +82,5 @@ $.fn.pullrefresh = function( options ) {
 				}
 			}
 		});
-
-
 	});
 }
