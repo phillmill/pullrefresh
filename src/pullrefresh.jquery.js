@@ -47,7 +47,7 @@ $.fn.pullrefresh = function( options ) {
 					e.preventDefault();
 				}
 
-				// Cant pull more than the pulla mount
+				// Cant pull more than the pull mount
 				if(difference > settings.pull_amount)
 					difference = settings.pull_amount;
 				$(this).css({
@@ -64,6 +64,7 @@ $.fn.pullrefresh = function( options ) {
 			if(scroll_top < 1) {
 				var $elem = $(this);
 				if(settings.fetch_data !== undefined && typeof settings.fetch_data == 'function') {
+					// When the (assumed remote) data is retrieved, animate the list back up to it's natural spot
 					settings.fetch_data().done(function(html) {
 						$elem.html(arguments[0]);
 						$elem.css({
